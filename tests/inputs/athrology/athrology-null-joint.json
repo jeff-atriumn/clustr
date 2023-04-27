@@ -1,0 +1,19 @@
+{
+  "date_measured": "2022-05-01T10:30:00Z",
+  "joints": [
+    {
+      "name": null,
+      "range_of_motion": 120,
+      "pain": null,
+      "stability": "stable",
+      "swelling": false
+    },
+    {
+      "name": "left_knee",
+      "range_of_motion": 90,
+      "pain": "mild",
+      "stability": null,
+      "swelling": true
+    }
+  ]
+}

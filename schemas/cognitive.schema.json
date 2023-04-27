@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "cognitive_performance": {
+    "date_measured": null,
+    "reaction_time": null,
+    "memory": null,
+    "attention": null,
+    "processing_speed": null
+  }
+}

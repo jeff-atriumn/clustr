@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "toxins_exposure": {
+      "type": "string",
+      "enum": ["low", "moderate", "high"]
+    },
+    "temperature": {
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100,
+      "exclusiveMinimum": true,
+      "exclusiveMaximum": true
+    },
+    "air_quality": {
+      "type": "object",
+      "properties": {
+        "pm25": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        },
+        "pm10": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        },
+        "ozone": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        },
+        "nitrogen_dioxide": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        },
+        "sulfur_dioxide": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        },
+        "carbon_monoxide": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        }
+      },
+      "required": [
+        "pm25",
+        "pm10",
+        "ozone",
+        "nitrogen_dioxide",
+        "sulfur_dioxide",
+        "carbon_monoxide"
+      ]
+    },
+    "humidity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "noise_levels": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200
+    },
+    "uv_radiation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 11
+    },
+    "green_space": {
+      "type": "string",
+      "enum": ["low", "moderate", "high"]
+    },
+    "water_quality": {
+      "type": "string",
+      "enum": ["low", "moderate", "high"]
+    }
+  },
+  "required": ["date_measured"]
+}

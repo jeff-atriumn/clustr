@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "socioeconomic": {
+      "type": "object",
+      "properties": {
+        "date_measured": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "income": {
+          "type": "number"
+        },
+        "education": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string",
+          "pattern": "^\\d{5}(-\\d{4})?$"
+        },
+        "occupation": {
+          "type": "string"
+        },
+        "employment_status": {
+          "type": "string",
+          "enum": ["employed", "unemployed", "self-employed", "retired"]
+        },
+        "marital_status": {
+          "type": "string",
+          "enum": ["single", "married", "divorced", "widowed"]
+        },
+        "number_of_dependents": {
+          "type": "integer"
+        },
+        "health_insurance_coverage": {
+          "type": "boolean"
+        },
+        "housing_situation": {
+          "type": "string",
+          "enum": [
+            "renting",
+            "owning",
+            "living with family or friends",
+            "homeless"
+          ]
+        }
+      },
+      "required": ["date_measured"]
+    }
+  }
+}

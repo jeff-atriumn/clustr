@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "gastrointestinal": {
+      "type": "object",
+      "properties": {
+        "date_measured": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ulcers": {
+          "type": "boolean"
+        },
+        "celiac_disease": {
+          "type": "boolean"
+        },
+        "irritable_bowel_syndrome": {
+          "type": "boolean"
+        },
+        "inflammatory_bowel_disease": {
+          "type": "boolean"
+        },
+        "gastroesophageal_reflux_disease": {
+          "type": "boolean"
+        }
+      },
+      "required": ["date_measured"]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "self-rated": { "$ref": "self-rated.schema.json" },
+    "life": {
+      "$ref": "life.schema.json"
+    },
+    "measurables": { "$ref": "measurables.schema.json" },
+    "nutrition": { "$ref": "nutrition.schema.json" },
+    "exercise": { "$ref": "exercise.schema.json" },
+    "genetics": { "$ref": "genetics.schema.json" },
+    "environment": { "$ref": "environment.schema.json" },
+    "sleep": { "$ref": "sleep.schema.json" },
+    "hematology": { "$ref": "hematology.schema.json" },
+    "osteology": { "$ref": "osteology.schema.json" },
+    "athrology": { "$ref": "athrology.schema.json" },
+    "mental-wellbeing": { "$ref": "mental-wellbeing.schema.json" },
+    "cognition": { "$ref": "cognition.schema.json" },
+    "hydration": { "$ref": "hydration.schema.json" },
+    "medical-history": { "$ref": "medical-history.schema.json" },
+    "neuroscience": { "$ref": "neuroscience.schema.json" },
+    "psychology": {
+      "$ref": "psychology.schema.json"
+    },
+    "gastroenterology": { "$ref": "gastroenterology.schema.json" },
+    "immunology": { "$ref": "immunology.schema.json" },
+    "sociology": { "$ref": "sociology.schema.json" }
+  }
+}

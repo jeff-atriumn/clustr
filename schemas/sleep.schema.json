@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sleep_hours": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sleep_stages": {
+      "type": "object",
+      "properties": {
+        "light": {
+          "type": "number",
+          "minimum": 0
+        },
+        "deep": {
+          "type": "number",
+          "minimum": 0
+        },
+        "REM": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "sleep_efficiency": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sleep_onset_latency": {
+      "type": "number",
+      "minimum": 0
+    },
+    "number_of_awakenings": {
+      "type": "number",
+      "minimum": 0
+    },
+    "time_spent_awake": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": ["date_measured"]
+}

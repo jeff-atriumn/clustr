@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "life": {
+      "type": "object",
+      "properties": {
+        "date_of_birth": { "type": ["string", "null"], "format": "date" },
+        "date_of_death": { "type": ["string", "null"], "format": "date" },
+        "gender": { "type": ["string", "null"] },
+        "ethnicity": { "type": ["string", "null"] },
+        "major_life_events": { "type": ["array", "null"] }
+      }
+    }
+  },
+  "required": ["life"]
+}

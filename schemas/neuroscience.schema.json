@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scan_type": {
+      "type": "string"
+    },
+    "scan_results": {
+      "type": "string"
+    },
+    "cognitive_function": {
+      "type": "string"
+    }
+  },
+  "required": ["date_measured"]
+}

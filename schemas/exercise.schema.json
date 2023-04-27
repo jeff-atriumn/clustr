@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "calories_burned": {
+      "type": "number",
+      "minimum": 0
+    },
+    "weight_lifted": {
+      "type": "number",
+      "minimum": 0
+    },
+    "duration_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": ["aerobic", "anaerobic", "stretching", "other"]
+    }
+  },
+  "required": ["date_measured"]
+}

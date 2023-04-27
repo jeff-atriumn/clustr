@@ -1,0 +1,353 @@
+{
+  "self_rated_health": {
+    "date_measured": null,
+    "status": null
+  },
+  "life": {
+    "date_of_birth": null,
+    "date_of_death": null,
+    "gender": null,
+    "ethnicity": null,
+    "major_life_events": null
+  },
+  "measurables": {
+    "date_measured": null,
+    "height": null,
+    "weight": null,
+    "blood_pressure": null,
+    "bmi": null,
+    "body_fat_percentage": null,
+    "waist_circumference": null,
+    "resting_heart_rate": null,
+    "respiratory_rate": null,
+    "oxygen_saturation": null,
+    "fasting_blood_glucose": null,
+    "cholesterol_level": null
+  },
+  "diet": {
+    "date_measured": null,
+    "calories_in": null,
+    "sugar": {
+      "grams": null
+    },
+    "protein": {
+      "grams": null
+    },
+    "carbs": {
+      "grams": null
+    },
+    "fat": {
+      "total_fat_grams": null,
+      "saturated_fat_grams": null,
+      "unsaturated_fat_grams": null,
+      "trans_fat_grams": null
+    },
+    "fiber": {
+      "grams": null
+    },
+    "sodium": {
+      "milligrams": null
+    },
+    "cholesterol": {
+      "milligrams": null
+    },
+    "micronutrients": {
+      "vitamin_a": {
+        "micrograms": null
+      },
+      "vitamin_c": {
+        "milligrams": null
+      },
+      "calcium": {
+        "milligrams": null
+      },
+      "iron": {
+        "milligrams": null
+      }
+    }
+  },
+  "exercise": {
+    "date_measured": null,
+    "calories_burned": null,
+    "weight_lifted": null,
+    "duration_minutes": null,
+    "activity_type": null
+  },
+  "genetics": {
+    "type": "object",
+    "properties": {
+      "date_measured": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "gene_variant": {
+        "type": "string"
+      }
+    },
+    "required": ["date_measured"]
+  },
+  "environment": {
+    "date_measured": null,
+    "toxins_exposure": null,
+    "temperature": null,
+    "air_quality": {
+      "pm25": null,
+      "pm10": null,
+      "ozone": null,
+      "nitrogen_dioxide": null,
+      "sulfur_dioxide": null,
+      "carbon_monoxide": null
+    },
+    "humidity": null,
+    "noise_levels": null,
+    "uv_radiation": null,
+    "green_space": null,
+    "water_quality": null
+  },
+  "sleep": {
+    "date_measured": null,
+    "sleep_hours": null,
+    "sleep_stages": {
+      "light": null,
+      "deep": null,
+      "REM": null
+    },
+    "sleep_efficiency": null,
+    "sleep_onset_latency": null,
+    "number_of_awakenings": null,
+    "time_spent_awake": null
+  },
+  "blood": {
+    "date_measured": null,
+    "blood_type": null,
+    "testosterone": null,
+    "hemoglobin": null,
+    "hematocrit": null,
+    "white_blood_cell_count": null,
+    "platelet_count": null,
+    "blood_glucose": null,
+    "cholesterol_levels": {
+      "total": null,
+      "ldl": null,
+      "hdl": null,
+      "triglycerides": null
+    },
+    "kidney_function": {
+      "creatinine": null,
+      "blood_urea_nitrogen": null
+    },
+    "liver_function": {
+      "alanine_transaminase": null,
+      "aspartate_transaminase": null
+    }
+  },
+  "bones": {
+    "date_measured": null,
+    "density": null,
+    "bone_mineral_density": null,
+    "t_score": null,
+    "z_score": null,
+    "fracture_history": [
+      {
+        "fracture_type": null,
+        "fracture_date": null,
+        "healing_duration": null
+      }
+    ],
+    "bone_turnover_markers": {
+      "blood": null,
+      "urine": null
+    }
+  },
+  "joint_health": {
+    "date_measured": null,
+    "joints": [
+      {
+        "name": "right_shoulder",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "left_shoulder",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "right_knee",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "left_knee",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "right_ankle",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "left_ankle",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "right_elbow",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "left_elbow",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "right_hip",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "left_hip",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "right_wrist",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      },
+      {
+        "name": "left_wrist",
+        "range_of_motion": null,
+        "pain": null,
+        "stability": null,
+        "swelling": null
+      }
+    ]
+  },
+  "mental_wellbeing": {
+    "date_measured": null,
+    "stress_level": null,
+    "anxiety_level": null,
+    "depression_level": null,
+    "burnout_level": null,
+    "coping_mechanisms": []
+  },
+  "cognitive_performance": {
+    "date_measured": null,
+    "reaction_time": null,
+    "memory": null,
+    "attention": null,
+    "processing_speed": null
+  },
+  "hydration": {
+    "date_measured": null,
+    "water_intake_liters": null,
+    "hydration_level": null
+  },
+  "medical_history": {
+    "date_measured": null,
+    "tonsils_removed": null,
+    "appendix_removed": null,
+    "surgeries": null,
+    "chronic_conditions": null,
+    "medications": null,
+    "vaccinations": null
+  },
+  "brain": {
+    "date_measured": null,
+    "scan_type": null,
+    "scan_results": null,
+    "cognitive_function": null
+  },
+  "psychological_disorders": {
+    "date_measured": null,
+    "schizophrenia": null,
+    "depression": null,
+    "anxiety": null,
+    "bipolar_disorder": null,
+    "ptsd": null,
+    "ocd": null,
+    "adhd": null
+  },
+  "gastrointestinal": {
+    "date_measured": null,
+    "ulcers": null,
+    "celiac_disease": null,
+    "irritable_bowel_syndrome": null,
+    "inflammatory_bowel_disease": null,
+    "gastroesophageal_reflux_disease": null
+  },
+  "allergies": {
+    "date_measured": null,
+    "allergens": [
+      {
+        "name": "pollen",
+        "severity": null
+      },
+      {
+        "name": "dust",
+        "severity": null
+      },
+      {
+        "name": "animal_dander",
+        "severity": null
+      },
+      {
+        "name": "latex",
+        "severity": null
+      },
+      {
+        "name": "bees",
+        "severity": null
+      },
+      {
+        "name": "shellfish",
+        "severity": null
+      },
+      {
+        "name": "peanuts",
+        "severity": null
+      },
+      {
+        "name": "dairy",
+        "severity": null
+      }
+    ]
+  },
+  "socioeconomic": {
+    "date_measured": null,
+    "income": null,
+    "education": null,
+    "zipcode": null,
+    "occupation": null,
+    "employment_status": null,
+    "marital_status": null,
+    "number_of_dependents": null,
+    "health_insurance_coverage": null,
+    "housing_situation": null
+  }
+}

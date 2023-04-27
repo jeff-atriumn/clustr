@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date"
+    },
+    "blood_type": {
+      "type": "string",
+      "enum": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
+    },
+    "testosterone": {
+      "type": "number",
+      "minimum": 0
+    },
+    "hemoglobin": {
+      "type": "number",
+      "minimum": 0
+    },
+    "hematocrit": {
+      "type": "number",
+      "minimum": 0
+    },
+    "white_blood_cell_count": {
+      "type": "number",
+      "minimum": 0
+    },
+    "platelet_count": {
+      "type": "number",
+      "minimum": 0
+    },
+    "blood_glucose": {
+      "type": "number",
+      "minimum": 0
+    },
+    "cholesterol_levels": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ldl": {
+          "type": "number",
+          "minimum": 0
+        },
+        "hdl": {
+          "type": "number",
+          "minimum": 0
+        },
+        "triglycerides": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": ["total", "ldl", "hdl", "triglycerides"]
+    },
+    "kidney_function": {
+      "type": "object",
+      "properties": {
+        "creatinine": {
+          "type": "number",
+          "minimum": 0
+        },
+        "blood_urea_nitrogen": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": ["creatinine", "blood_urea_nitrogen"]
+    },
+    "liver_function": {
+      "type": "object",
+      "properties": {
+        "alanine_transaminase": {
+          "type": "number",
+          "minimum": 0
+        },
+        "aspartate_transaminase": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": ["alanine_transaminase", "aspartate_transaminase"]
+    }
+  },
+  "required": ["date_measured", "blood_type"]
+}

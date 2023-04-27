@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": { "type": ["string", "null"], "format": "date-time" },
+    "calories_in": { "type": ["number", "null"] },
+    "sugar": {
+      "type": "object",
+      "properties": {
+        "grams": { "type": ["number", "null"] }
+      }
+    },
+    "protein": {
+      "type": "object",
+      "properties": {
+        "grams": { "type": ["number", "null"] }
+      }
+    },
+    "carbs": {
+      "type": "object",
+      "properties": {
+        "grams": { "type": ["number", "null"] }
+      }
+    },
+    "fat": {
+      "type": "object",
+      "properties": {
+        "total_fat_grams": { "type": ["number", "null"] },
+        "saturated_fat_grams": { "type": ["number", "null"] },
+        "unsaturated_fat_grams": { "type": ["number", "null"] },
+        "trans_fat_grams": { "type": ["number", "null"] }
+      }
+    },
+    "fiber": {
+      "type": "object",
+      "properties": {
+        "grams": { "type": ["number", "null"] }
+      }
+    },
+    "sodium": {
+      "type": "object",
+      "properties": {
+        "milligrams": { "type": ["number", "null"] }
+      }
+    },
+    "cholesterol": {
+      "type": "object",
+      "properties": {
+        "milligrams": { "type": ["number", "null"] }
+      }
+    },
+    "micronutrients": {
+      "type": "object",
+      "properties": {
+        "vitamin_a": {
+          "type": "object",
+          "properties": {
+            "micrograms": { "type": ["number", "null"] }
+          }
+        },
+        "vitamin_c": {
+          "type": "object",
+          "properties": {
+            "milligrams": { "type": ["number", "null"] }
+          }
+        },
+        "calcium": {
+          "type": "object",
+          "properties": {
+            "milligrams": { "type": ["number", "null"] }
+          }
+        },
+        "iron": {
+          "type": "object",
+          "properties": {
+            "milligrams": { "type": ["number", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

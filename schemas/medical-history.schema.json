@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tonsils_removed": {
+      "type": "boolean"
+    },
+    "appendix_removed": {
+      "type": "boolean"
+    },
+    "surgeries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "chronic_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vaccinations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["date_measured"]
+}

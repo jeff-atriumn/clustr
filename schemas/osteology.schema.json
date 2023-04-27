@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": { "type": "string", "format": "date" },
+    "density": { "type": "number", "minimum": 0 },
+    "bone_mineral_density": { "type": "number", "minimum": 0 },
+    "t_score": { "type": "number" },
+    "z_score": { "type": "number" },
+    "fracture_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fracture_type": { "type": "string" },
+          "fracture_date": { "type": "string", "format": "date" },
+          "healing_duration": { "type": "number", "minimum": 0 }
+        },
+        "required": ["fracture_type", "fracture_date"]
+      }
+    },
+    "bone_turnover_markers": {
+      "type": "object",
+      "properties": {
+        "blood": { "type": "number", "minimum": 0 },
+        "urine": { "type": "number", "minimum": 0 }
+      }
+    }
+  },
+  "required": ["date_measured"]
+}

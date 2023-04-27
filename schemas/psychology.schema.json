@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schizophrenia": {
+      "type": "boolean"
+    },
+    "depression": {
+      "type": "boolean"
+    },
+    "anxiety": {
+      "type": "boolean"
+    },
+    "bipolar_disorder": {
+      "type": "boolean"
+    },
+    "ptsd": {
+      "type": "boolean"
+    },
+    "ocd": {
+      "type": "boolean"
+    },
+    "adhd": {
+      "type": "boolean"
+    }
+  },
+  "required": ["date_measured"]
+}

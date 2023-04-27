@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date_measured": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "joints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "right_shoulder",
+              "left_shoulder",
+              "right_knee",
+              "left_knee",
+              "right_ankle",
+              "left_ankle",
+              "right_elbow",
+              "left_elbow",
+              "right_hip",
+              "left_hip",
+              "right_wrist",
+              "left_wrist"
+            ]
+          },
+          "range_of_motion": {
+            "type": ["number", "null"],
+            "minimum": 0
+          },
+          "pain": {
+            "type": ["string", "null"]
+          },
+          "stability": {
+            "type": ["string", "null"]
+          },
+          "swelling": {
+            "type": ["boolean", "null"]
+          }
+        },
+        "required": ["name"]
+      }
+    }
+  },
+  "required": ["joints"]
+}

@@ -349,5 +349,26 @@
     "number_of_dependents": null,
     "health_insurance_coverage": null,
     "housing_situation": null
+  },
+  "dental": {
+    "date_measured": null,
+    "oral_health_status": {
+      "number_of_teeth_present": null,
+      "number_of_missing_teeth": null,
+      "tooth_decay": [
+        {
+          "tooth_number": null,
+          "severity": null
+        }
+      ],
+      "periodontal_disease_status": null
+    },
+    "dental_imaging": [
+      {
+        "image_date": null,
+        "image_type": null,
+        "image_url": null
+      }
+    ]
   }
 }

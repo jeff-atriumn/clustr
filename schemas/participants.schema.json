@@ -25,6 +25,7 @@
     },
     "gastroenterology": { "$ref": "gastroenterology.schema.json" },
     "immunology": { "$ref": "immunology.schema.json" },
-    "sociology": { "$ref": "sociology.schema.json" }
+    "sociology": { "$ref": "sociology.schema.json" },
+    "oral": { "$ref": "oral.schema.json" }
   }
 }

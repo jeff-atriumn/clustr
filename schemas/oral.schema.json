@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "dental": {
+        "type": "object",
+        "properties": {
+          "date_measured": { "type": "string", "format": "date" },
+          "oral_health_status": {
+            "type": "object",
+            "properties": {
+              "number_of_teeth_present": { "type": "integer" },
+              "number_of_missing_teeth": { "type": "integer" },
+              "tooth_decay": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "tooth_number": { "type": "integer" },
+                    "severity": { "type": "string" }
+                  },
+                  "required": ["tooth_number", "severity"]
+                }
+              },
+              "periodontal_disease_status": { "type": "string" }
+            },
+            "required": ["number_of_teeth_present", "number_of_missing_teeth"]
+          },
+          "dental_imaging": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image_date": { "type": "string", "format": "date" },
+                "image_type": { "type": "string" },
+                "image_url": { "type": "string", "format": "uri" }
+              },
+              "required": ["image_date", "image_type", "image_url"]
+            }
+          }
+        },
+        "required": ["date_measured", "oral_health_status"]
+      }
+    },
+    "required": ["dental"]
+  }

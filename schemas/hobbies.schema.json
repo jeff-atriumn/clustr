@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "hobbies": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            },
+            "hours_per_week": {
+              "type": "number",
+              "minimum": 0
+            },
+            "skill_level": {
+              "type": "string",
+              "enum": ["beginner", "intermediate", "advanced", "expert"]
+            }
+          },
+          "required": ["name", "category", "hours_per_week", "skill_level"]
+        }
+      }
+    },
+    "required": ["id", "hobbies"]
+  }

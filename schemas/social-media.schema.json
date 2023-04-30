@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "social_media": {
+        "type": "object",
+        "properties": {
+          "date_measured": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "platform_name": {
+                  "type": "string"
+                },
+                "time_spent_minutes": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "interactions": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "content_type": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "images",
+                      "videos",
+                      "links",
+                      "gifs",
+                      "audio",
+                      "other"
+                    ]
+                  }
+                }
+              },
+              "required": ["platform_name", "time_spent_minutes", "interactions", "content_type"]
+            }
+          }
+        },
+        "required": ["date_measured", "platforms"]
+      }
+    }
+  }

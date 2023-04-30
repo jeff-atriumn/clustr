@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "recreational_activities": {
+        "type": "object",
+        "properties": {
+          "date_measured": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "duration_minutes": {
+                  "type": "number"
+                },
+                "intensity": {
+                  "type": "string",
+                  "enum": ["low", "moderate", "high"]
+                },
+                "calories_burned": {
+                  "type": "number"
+                }
+              },
+              "required": ["name", "duration_minutes", "intensity", "calories_burned"]
+            }
+          }
+        },
+        "required": ["date_measured"]
+      }
+    }
+  }

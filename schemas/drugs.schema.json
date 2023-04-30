@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "recreational_drugs": {
+        "type": "object",
+        "properties": {
+          "date_measured": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "drugs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "drug_name": {
+                  "type": "string"
+                },
+                "method_of_consumption": {
+                  "type": "string"
+                },
+                "frequency_of_use": {
+                  "type": "string",
+                  "enum": [
+                    "daily",
+                    "weekly",
+                    "monthly",
+                    "occasionally",
+                    "never"
+                  ]
+                }
+              },
+              "required": ["drug_name", "method_of_consumption", "frequency_of_use"]
+            }
+          }
+        },
+        "required": ["date_measured", "drugs"]
+      }
+    }
+  }

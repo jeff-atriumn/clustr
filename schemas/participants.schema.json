@@ -26,6 +26,10 @@
     "gastroenterology": { "$ref": "gastroenterology.schema.json" },
     "immunology": { "$ref": "immunology.schema.json" },
     "sociology": { "$ref": "sociology.schema.json" },
-    "oral": { "$ref": "oral.schema.json" }
+    "oral": { "$ref": "oral.schema.json" },
+    "recreational": { "$ref": "recreational.schema.json" },
+    "social-media": { "$ref": "social-media.schema.json" },
+    "drugs": { "$ref": "drugs.schema.json" },
+    "hobbies": { "$ref": "hobbies.schema.json" }
   }
 }

@@ -350,7 +350,7 @@
     "health_insurance_coverage": null,
     "housing_situation": null
   },
-  "dental": {
+  "oral": {
     "date_measured": null,
     "oral_health_status": {
       "number_of_teeth_present": null,
@@ -370,5 +370,7 @@
         "image_url": null
       }
     ]
-  }
+  },
+  "recreational": {},
+  "social_media": {}
 }

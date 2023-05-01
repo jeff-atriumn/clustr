@@ -112,6 +112,37 @@ def generate_hydration_data(participant_id, start_date, num_days):
         })
     return hydration_data
 
+def generate_oral_health_data(participant_id, start_date, num_years):
+    oral_health_data = []
+    for year in range(num_years):
+        for month_offset in [0, 6]:
+            date_measured = start_date + timedelta(days=30 * (year * 12 + month_offset))
+            oral_health_data.append({
+                "participant_id": participant_id,
+                "date_measured": date_measured.isoformat(),
+                "oral_health_status": {
+                    "number_of_teeth_present": random.randint(0, 32),
+                    "number_of_missing_teeth": random.randint(0, 32),
+                    "tooth_decay": [
+                        {
+                            "tooth_number": random.randint(1, 32),
+                            "severity": random.choice(["mild", "moderate", "severe"])
+                        }
+                        for _ in range(random.randint(0, 5))
+                    ],
+                    "periodontal_disease_status": random.choice(["healthy", "gingivitis", "periodontitis", None]),
+                },
+                "dental_imaging": [
+                    {
+                        "image_date": date_measured.isoformat(),
+                        "image_type": random.choice(["xray", "ct", "mri"]),
+                        "image_url": f"https://example.com/images/{participant_id}/oral_health/{year * 12 + month_offset}.jpg"
+                    }
+                ]
+            })
+
+    return oral_health_data
+
 
 def save_data_to_parquet(data, filename):
     df = pd.DataFrame(data)
@@ -136,6 +167,9 @@ def generate_and_save_data(num_participants, start_date):
 
         hydration_data = generate_hydration_data(participant_id, start_date, 730)
         save_data_to_parquet(hydration_data, f"data/hydration_data_{participant_id}.parquet")
+
+        oral_health_data = generate_oral_health_data(participant_id, start_date, 2)
+        save_data_to_parquet(oral_health_data, f"data/oral_health_data_{participant_id}.parquet")
 
 if __name__ == "__main__":
     num_participants = 100

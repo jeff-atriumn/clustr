@@ -6,18 +6,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-def apply_allergy_mapping(x):
-    allergy_mapping = {
-        "None": 0,
-        "Mild": 1,
-        "Moderate": 2,
-        "Severe": 3
-    }
-
-    if isinstance(x, dict):
-        return {allergy_mapping.get(key, key): value for key, value in x.items()}
-    return x
-
 def main():
     # Define the file path pattern for each dataset
     self_rated_files = "data/self_rated_data_*.parquet"
@@ -26,7 +14,6 @@ def main():
     osteology_files = "data/osteology_data_*.parquet"
     hydration_files = "data/hydration_data_*.parquet"
     oral_files = "data/oral_health_data_*.parquet"
-    immunology_files = "data/immunology_data_*.parquet"
 
     # Read and concatenate all the files for each dataset
     self_rated_data = pd.concat([pd.read_parquet(f) for f in glob.glob(self_rated_files)], ignore_index=True)
@@ -35,7 +22,6 @@ def main():
     osteology_data = pd.concat([pd.read_parquet(f) for f in glob.glob(osteology_files)], ignore_index=True)
     hydration_data = pd.concat([pd.read_parquet(f) for f in glob.glob(hydration_files)], ignore_index=True)
     oral_data = pd.concat([pd.read_parquet(f) for f in glob.glob(oral_files)], ignore_index=True)
-    immunology_data = pd.concat([pd.read_parquet(f) for f in glob.glob(immunology_files)], ignore_index=True)
 
     # Merge the datasets
     merged_data = self_rated_data.merge(measureables_data, on=["participant_id", "date_measured"], how="outer")
@@ -43,13 +29,9 @@ def main():
     merged_data = merged_data.merge(osteology_data, on=["participant_id", "date_measured"], how="outer")
     merged_data = merged_data.merge(hydration_data, on=["participant_id", "date_measured"], how="outer")
     merged_data = merged_data.merge(oral_data, on=["participant_id", "date_measured"], how="outer")
-    merged_data = merged_data.merge(immunology_data, on=["participant_id", "date_measured"], how="outer")
 
     # Sort the merged data by participant_id and date_measured
     merged_data = merged_data.sort_values(by=["participant_id", "date_measured"]).reset_index(drop=True)
-
-    print(merged_data)
-    print(merged_data.columns)
 
     quality_mapping = {
         "Poor": 1,
@@ -58,12 +40,9 @@ def main():
         "Very good": 4,
         "Excellent": 5
     }
-    
+
     merged_data["status"] = merged_data["status"].map(quality_mapping)
-    merged_data["allergies"] = merged_data["allergies"].apply(apply_allergy_mapping)
-    allergy_dummies = merged_data["allergies"].apply(pd.Series).fillna(0)
-    allergy_dummies = allergy_dummies.add_prefix("allergy_")
-    merged_data = pd.concat([merged_data.drop("allergies", axis=1), allergy_dummies], axis=1)
+
 
     # Split the blood pressure values into systolic and diastolic
     merged_data[['systolic_bp', 'diastolic_bp']] = merged_data['blood_pressure'].str.split('/', expand=True)
@@ -71,7 +50,7 @@ def main():
     # Convert the new columns to numeric values
     merged_data['systolic_bp'] = pd.to_numeric(merged_data['systolic_bp'], errors='coerce')
     merged_data['diastolic_bp'] = pd.to_numeric(merged_data['diastolic_bp'], errors='coerce')
-    
+
     # Define your mapping logic here, e.g., based on the highest percentage stage
 
     # Drop the original blood pressure column
@@ -81,21 +60,6 @@ def main():
     # Calculate summary statistics for each numerical column
     print("Summary statistics:")
     print(merged_data.describe())
-
-    # Visualize the distribution of each numerical column
-    # for col in merged_data.select_dtypes(include=['number']).columns:
-    #     plt.figure()
-    #     sns.histplot(data=merged_data, x=col, kde=True)
-    #     plt.title(f"Distribution of {col}")
-    #     plt.show()
-
-    # # Visualize the distribution of categorical variables (e.g., self-rated status)
-    # categorical_columns = ["status"]  # Add more categorical columns if needed
-    # for col in categorical_columns:
-    #     plt.figure()
-    #     sns.countplot(data=merged_data, x=col)
-    #     plt.title(f"Distribution of {col}")
-    #     plt.show()
 
     print(merged_data.dtypes)
 

@@ -140,28 +140,6 @@ def generate_oral_health_data(participant_id, start_date, num_years):
 
     return oral_health_data
 
-def generate_allergens():
-    allergens_list = ['dust', 'pollen', 'pet dander', 'mold', 'food', 'insect stings']
-    num_allergens = random.randint(0, len(allergens_list))
-    allergens = random.sample(allergens_list, num_allergens)
-    
-    allergies = []
-    for allergen in allergens:
-        severity = random.choice(['mild', 'moderate', 'severe'])
-        allergies.append({'name': allergen, 'severity': severity})
-    return allergies
-
-def generate_immunology_data(participant_id, start_date, num_years):
-    data = []
-    for year in range(num_years):
-        date_measured = start_date + timedelta(days=365 * year)
-        data.append({
-            "participant_id": participant_id,
-            "date_measured": date_measured.isoformat(),
-            "allergies": generate_allergens(),
-        })
-    return data
-
 def save_data_to_parquet(data, filename):
     df = pd.DataFrame(data)
     df.to_parquet(filename, index=False)
@@ -188,9 +166,6 @@ def generate_and_save_data(num_participants, start_date):
 
         oral_health_data = generate_oral_health_data(participant_id, start_date, 2)
         save_data_to_parquet(oral_health_data, f"data/oral_health_data_{participant_id}.parquet")
-        
-        immunology_data = generate_immunology_data(participant_id, start_date, 2)
-        save_data_to_parquet(immunology_data, f"data/immunology_data_{participant_id}.parquet")
 
 if __name__ == "__main__":
     num_participants = int(sys.argv[1])
